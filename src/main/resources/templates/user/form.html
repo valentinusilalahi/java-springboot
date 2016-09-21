@@ -1,0 +1,55 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Create User</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Create User</h1>
+	<form action="#" th:action="@{/user/form}" th:object="${user}"
+		method="post">
+
+		<table border="1">
+
+			<tbody>
+				<tr>
+					<td>Nama</td>
+					<td><input type="text" th:field="*{nama}" /></td>
+					<td th:if="${#fields.hasErrors('nama')}" th:errors="*{nama}">Pesan
+						error</td>
+				</tr>
+
+				<tr>
+					<td>Email</td>
+					<td><input type="text" th:field="*{email}" /></td>
+					<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Pesan
+						error</td>
+				</tr>
+
+				<tr>
+					<td>No HP</td>
+					<td><input type="text" th:field="*{noHp}" /></td>
+					<td th:if="${#fields.hasErrors('noHp')}" th:errors="*{noHp}">Pesan
+						error</td>
+				</tr>
+
+				<tr>
+					<td>Alamat</td>
+					<td><input type="text" th:field="*{alamat}" /></td>
+					<td th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}">Pesan
+						error</td>
+				</tr>
+
+				<tr>
+					<td>&nbsp;</td>
+					<td><input type="submit" value="Simpan" /></td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</form>
+</body>
+</html>

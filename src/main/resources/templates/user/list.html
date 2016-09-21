@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>List User</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>List User</h1>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Nama</th>
+				<th>Email</th>
+				<th>No HP</th>
+				<th>Alamat</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="u : ${daftarUser}">
+				<td th:text="${u.nama}">Valentinus</td>
+				<td th:text="${u.email}">valentinus.silalahi@gmail.com</td>
+				<td th:text="${u.noHp}">085721937567</td>
+				<td th:text="${u.alamat}">Bandung</td>
+				<td><a href="form.html" th:href="@{/user/form(id=${u.id})}">
+						edit </a>| <a href="view.html" th:href="@{/user/view(id=${u.id})}">
+						lihat </a>| <a href="view.html"
+					th:href="@{/peserta/hapus(id=${p.id})}"> hapus </a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="/user">Add new Users</a>
+</body>
+</html>
